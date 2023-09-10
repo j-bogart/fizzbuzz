@@ -1,4 +1,4 @@
-package fr.jbogart.fizzbuzz;
+package fr.jbogart.fizzbuzz.application;
 
 public class FizzbuzzRequest {
 

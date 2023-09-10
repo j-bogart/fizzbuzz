@@ -1,5 +1,6 @@
-package fr.jbogart.fizzbuzz;
+package fr.jbogart.fizzbuzz.application;
 
+import fr.jbogart.fizzbuzz.domain.FizzbuzzService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

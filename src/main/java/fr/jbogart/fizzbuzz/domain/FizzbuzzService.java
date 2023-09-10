@@ -1,4 +1,4 @@
-package fr.jbogart.fizzbuzz;
+package fr.jbogart.fizzbuzz.domain;
 
 import org.springframework.stereotype.Service;
 
