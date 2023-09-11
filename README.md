@@ -40,7 +40,7 @@ This is a simple API coded in Java with Spring Boot. It includes :
   - Commit naming checker
   - Automated tests
   - Code Analysis
-  - Scanning dependencies for vulnerabilities
+  - Scanning dependencies for vulnerabilities _(No upgrade or patch available for H2)_
   - Automated Release and Versioning
   - Building
 
