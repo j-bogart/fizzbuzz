@@ -1,0 +1,22 @@
+# This workflow will make a release based on Conventional Commit Messages
+# This will trigger the build workflow
+
+name: 'Make a release'
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Automate release with Conventional Commit Messages
+        uses: google-github-actions/release-please-action@v3
+        with:
+          release-type: maven
+          package-name: release-please-action
