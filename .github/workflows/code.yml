@@ -1,6 +1,6 @@
 # This workflow will ensure the best practices for coding, such as code and commit formats
 
-name: 'Code Checker'
+name: 'Code Format'
 
 on: pull_request
 

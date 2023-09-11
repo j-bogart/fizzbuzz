@@ -1,7 +1,7 @@
 # This workflow will build a package using Maven and then publish it to GitHub packages when a release is created
 # Releases are based and versioned from Conventional Commit Messages
 
-name: 'Build package'
+name: 'Build'
 
 on:
   release:
