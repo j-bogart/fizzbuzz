@@ -3,10 +3,7 @@ package fr.jbogart.fizzbuzz.application;
 import fr.jbogart.fizzbuzz.domain.FizzbuzzService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,18 +18,24 @@ public class FizzbuzzController {
     }
 
     @PostMapping(consumes = {"application/json"})
-    public ResponseEntity<List<String>> generateFizzbuzz(@RequestBody FizzbuzzRequest body) {
+    public ResponseEntity<List<String>> generateSequence(@RequestBody FizzbuzzDTO fizzbuzzDTO) {
 
-        if (body.getInt1() < 1 || body.getInt2() < 1 || body.getLimit() < 1) {
+        if (fizzbuzzDTO.getInt1() < 1 || fizzbuzzDTO.getInt2() < 1 || fizzbuzzDTO.getLimit() < 1) {
             return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).build();
         }
 
-        if (body.getStr1() == null || body.getStr2() == null) {
+        if (fizzbuzzDTO.getStr1() == null || fizzbuzzDTO.getStr2() == null) {
             return ResponseEntity.badRequest().build();
         }
 
-        List<String> strings = fizzbuzzService.generateSequence(body.getInt1(), body.getInt2(), body.getLimit(), body.getStr1(), body.getStr2());
-        return ResponseEntity.status(HttpStatus.CREATED).body(strings);
+        List<String> sequenceResult = fizzbuzzService.generateSequence(fizzbuzzDTO);
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(sequenceResult);
+    }
+
+    @GetMapping(produces = {"application/json"})
+    public ResponseEntity<String> getStatistics() {
+        return ResponseEntity.ok(fizzbuzzService.getStatistics());
     }
 
 }
