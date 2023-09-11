@@ -1,0 +1,26 @@
+# This workflow will ensure the best practices for coding, such as code and commit formats
+
+name: 'Code Checker'
+
+on: workflow_dispatch
+
+jobs:
+  commit:
+    name: Conventional Commits Compliance
+    runs-on: ubuntu-latest
+    steps:
+      - uses: dev-build-deploy/commit-me@v0.12.2
+  lint:
+    name: Lint Code Base
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Run Super-Linter
+        uses: super-linter/super-linter@v5
+        env:
+          VALIDATE_ALL_CODEBASE: false
+          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
