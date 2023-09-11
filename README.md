@@ -36,15 +36,16 @@ This is a simple API coded in Java with Spring Boot. It includes :
 - Required endpoints
 - Tested code
 - Continuous Integration
-    - Linter
-    - Commit naming checker
-    - Automated tests
-    - Vulnerabilities scaning
-    - Automated Release and Versioning
-    - Building
+  - Linter
+  - Commit naming checker
+  - Automated tests
+  - Code Analysis
+  - Scanning dependencies for vulnerabilities
+  - Automated Release and Versioning
+  - Building
 
 The project is based on Clean Architecture and Clean Code.  
-The commit naming is using [Conventional Commits](conventionalcommits.org/) specifications.
+The commit naming is using [Conventional Commits](https://conventionalcommits.org/) specifications.
 
 What is not included (*it can go far...*) :
 
@@ -71,13 +72,13 @@ run application on `http://localhost:8080`
 
 ## API Reference
 
-#### Get all items
+#### Create a Fizzbuzz sequence
 
-```http
+```
   POST /fizzbuzz
 ```
 
-Return a sequence of fizzbuzz with specified parameters.
+Returns a sequence of fizzbuzz with specified parameters.
 
 | Parameter | Type      | Description                                                          |
 |:----------|:----------|:---------------------------------------------------------------------|
@@ -93,13 +94,13 @@ Return a sequence of fizzbuzz with specified parameters.
 |        `400`        | At least one parameter is `null`          |
 |        `422`        | Value of `int1` or `int2` is lower than 1 |
 
-#### Get item
+#### Get statistics
 
-```http
+```
   GET /fizzbuzz
 ```
 
-Return the most used request.
+Returns the most used request, or an empty body when no request found in the database.
 
 | Reponse Status Code | Description |
 |:-------------------:|:------------|
