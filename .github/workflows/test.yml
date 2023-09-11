@@ -1,6 +1,6 @@
 # This workflow will pass all tests
 
-name: 'Tests'
+name: 'tests'
 
 on: [ push ]
 

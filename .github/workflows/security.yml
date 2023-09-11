@@ -1,6 +1,6 @@
 # This workflow will parse the code and the dependencies to find vulnerabilities
 
-name: 'Security Scan'
+name: 'security scan'
 
 on: workflow_dispatch
 
