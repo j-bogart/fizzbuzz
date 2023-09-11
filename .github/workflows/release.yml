@@ -1,5 +1,5 @@
 # This workflow will make a release based on Conventional Commit Messages
-# This will trigger the build workflow
+# This should trigger the build workflow
 
 name: 'Make a release'
 
